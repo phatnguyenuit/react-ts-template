@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import OTPInput from "components/OTPInput";
+import "./App.css";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      - Number OTP:
+      <OTPInput
+        length={4}
+        className="otpContainer"
+        inputClassName="otpInput"
+        isNumberInput
+        autoFocus
+        onChangeOTP={otp => console.log("Number OTP: ", otp)}
+      />
+      - String OTP:
+      <OTPInput
+        autoFocus
+        length={4}
+        className="otpContainer"
+        inputClassName="otpInput"
+        onChangeOTP={otp => console.log("String OTP: ", otp)}
+      />
     </div>
   );
-}
+};
 
 export default App;
